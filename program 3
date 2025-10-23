@@ -1,0 +1,58 @@
+#include <iostream>
+# include <string>
+using namespace std;
+int main(){
+    struct Employee{
+        int membersid;
+        string name;
+        float salary;
+    };
+    Employee emp[10]={};
+    for(int i=0;i<10;i++){
+        cout<<"Enter the details of "<<i+1<<" employee";
+        int a;
+        float b;
+        string c;
+        cin>>a;
+        cin>>c;
+        cin>>b;
+        emp[i].membersid = a;
+        emp[i].name = c;
+         emp[i].salary = b;
+    
+    }
+    while(1==1){
+         cout<<"Enter 1 for displaying employee details, 2 for searching e,ployee by id, 3 for increasing salary by 10% & 4 for exit";
+         int choice;
+         cin>> choice;
+         if (choice==1){
+          
+           for (int i = 0; i < 10; i++) {
+
+             cout << emp[i].membersid << "\t" << emp[i].name << "\t\t" << emp[i].salary << endl;
+         }
+        }
+        else if(choice==2){
+           int id;
+           cin>>id;
+           for (int i = 0; i < 10; i++) {
+            if(emp[i].membersid==id){
+             cout << emp[i].membersid << "\t" << emp[i].name << "\t\t" << emp[i].salary << endl;
+            }
+            }
+        
+            }
+        else if( choice==3){
+          for (int i = 0; i < 10; i++) {
+            if(emp[i].salary<30000){
+                emp[i].salary+= emp[i].salary/10;
+            }
+        
+            }
+        
+            }
+        else{
+          break;
+    }
+}
+}
